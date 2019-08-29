@@ -3,6 +3,7 @@ package net.snuckdev.snuckmissions.events;
 import net.snuckdev.snuckmissions.Main;
 import net.snuckdev.snuckmissions.enums.MissionType;
 import net.snuckdev.snuckmissions.items.ItemBuilder;
+import net.snuckdev.snuckmissions.utils.ItemStackUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -29,57 +30,42 @@ public class ClickInventory implements Listener {
         ItemStack item = e.getCurrentItem();
         String itemName = item.getItemMeta().getDisplayName();
 
-        if(title.equals("Menu de missões")) {
-            if(e.getCurrentItem() == null) return;
-            if(e.getCurrentItem().getType() == Material.AIR) return;
+        if (title.equals("Menu de missões")) {
+            if (e.getCurrentItem() == null) return;
+            if (e.getCurrentItem().getType() == Material.AIR) return;
 
             switch (itemName) {
-                case "§aBlocos quebrados":
+                case "§aBlocos quebrados": {
                     e.setCancelled(true);
                     Inventory brokenBlocks = Bukkit.createInventory(null, 3 * 9, "Missões - blocos quebrados");
                     p.openInventory(brokenBlocks);
                     break;
-                case "§aBlocos colocados":
+                }
+                case "§aBlocos colocados": {
                     e.setCancelled(true);
                     Inventory placedBlocks = Bukkit.createInventory(null, 3 * 9, "Missões - blocos colocados");
                     p.openInventory(placedBlocks);
                     break;
-                case "§aJogadores mortos":
+                }
+                case "§aJogadores mortos": {
                     e.setCancelled(true);
                     Inventory killedPlayers = Bukkit.createInventory(null, 3 * 9, "Missões - jogadores mortos");
-                    if(Main.data.get(p.getName() + ".players_killed").getAsInt() >= 1000) {
-                        List<String> lore = new ArrayList<>();
-                        lore.add("§7Status: §acompleta");
-                        lore.add("");
-                        lore.add("§7Progresso: §f1000§7/§f1000");
-                        ItemStack itemS = new ItemStack(Material.STORAGE_MINECART);
-                        ItemMeta meta = itemS.getItemMeta();
-                        meta.setDisplayName("§bAssassino de Jogadores I");
-                        meta.setLore(lore);
-                        itemS.setItemMeta(meta);
-                        killedPlayers.setItem(10, itemS);
-                    } else if(Main.data.get(p.getName() + ".players_killed").getAsInt() < 1000) {
-                        List<String> lore2 = new ArrayList<>();
-                        lore2.add("§7Status: §cincompleta");
-                        lore2.add("");
-                        lore2.add("§7Progresso: §f" + Main.data.get(p.getName() + ".players_killed") + "§7/§f1000");
-                        ItemStack itemS = new ItemStack(Material.MINECART);
-                        ItemMeta meta = itemS.getItemMeta();
-                        meta.setDisplayName("§bAssassino de Jogadores I");
-                        meta.setLore(lore2);
-                        itemS.setItemMeta(meta);
-                        killedPlayers.setItem(10, itemS);
-                    }
+                    killedPlayers.setItem(11, ItemStackUtils.generateMinecart(MissionType.PLAYER_KILL, p, 1));
+                    killedPlayers.setItem(12, ItemStackUtils.generateMinecart(MissionType.PLAYER_KILL, p, 2));
+                    killedPlayers.setItem(13, ItemStackUtils.generateMinecart(MissionType.PLAYER_KILL, p, 3));
+                    killedPlayers.setItem(14, ItemStackUtils.generateMinecart(MissionType.PLAYER_KILL, p, 4));
+                    killedPlayers.setItem(15, ItemStackUtils.generateMinecart(MissionType.PLAYER_KILL, p, 5));
                     p.openInventory(killedPlayers);
                     break;
+                }
                 case "§aMonstros mortos":
                     e.setCancelled(true);
                     Inventory killedMobs = Bukkit.createInventory(null, 3 * 9, "Missões - monstros mortos");
                     p.openInventory(killedMobs);
                     break;
+
             }
-
         }
-    }
 
+    }
 }

@@ -9,3 +9,15 @@
 # -
 
 conquista-alcancada: '&a&lYAY! &aVocê alcançou a conquista &b{conquista} &acom sucesso.'
+
+#-
+# Configuração das conquistas
+# -
+
+conquistas:
+  assassino-de-jogadores:
+    level-1: 1000
+    level-2: 2000
+    level-3: 3000
+    level-4: 4000
+    level-5: 5000

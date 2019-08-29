@@ -3,6 +3,7 @@ net\snuckdev\snuckmissions\utils\ConfigUtils.class
 net\snuckdev\snuckmissions\events\MissionEvents.class
 net\snuckdev\snuckmissions\items\ItemSpecification.class
 net\snuckdev\snuckmissions\objects\MissionManager$1.class
+net\snuckdev\snuckmissions\utils\ItemStackUtils$1.class
 net\snuckdev\snuckmissions\Main.class
 net\snuckdev\snuckmissions\events\ClickInventory.class
 net\snuckdev\snuckmissions\commands\MissionsCommand.class
@@ -11,3 +12,5 @@ net\snuckdev\snuckmissions\objects\MissionManager.class
 net\snuckdev\snuckmissions\events\JoinEvent.class
 net\snuckdev\snuckmissions\items\SkullBuilder.class
 net\snuckdev\snuckmissions\objects\JsonConfig.class
+net\snuckdev\snuckmissions\utils\RomanConverter.class
+net\snuckdev\snuckmissions\utils\ItemStackUtils.class
