@@ -14,10 +14,29 @@ conquista-alcancada: '&a&lYAY! &aVocê alcançou a conquista &b{conquista} &acom
 # Configuração das conquistas
 # -
 
-conquistas:
-  assassino-de-jogadores:
-    level-1: 1000
-    level-2: 2000
-    level-3: 3000
-    level-4: 4000
-    level-5: 5000
+menu-principal:
+  blocos-quebrados:
+    name: '&eDetonador de blocos'
+    posicao: 10
+    item: 'DIAMOND_PICKAXE'
+    lore:
+      - '&f1º Objetivo: &7Quebrar &f1.000 &7blocos de qualquer tipo.'
+      - '&f2º Objetivo: &7Quebrar &f2.000 &7blocos de qualquer tipo.'
+      - '&f3º Objetivo: &7Quebrar &f3.000 &7blocos de qualquer tipo.'
+      - '&f4º Objetivo: &7Quebrar &f4.000 &7blocos de qualquer tipo.'
+      - '&f5º Objetivo: &7Quebrar &f5.000 &7blocos de qualquer tipo.'
+      - ''
+      - '&eClique para ver mais detalhes.'
+
+  blocos-colocados:
+    name: '&eColocador de blocos'
+    posicao: 12
+    item: 'DIRT'
+    lore:
+      - '&f1º Objetivo: &7Colocar &f1.000 &7blocos de qualquer tipo.'
+      - '&f2º Objetivo: &7Colocar &f2.000 &7blocos de qualquer tipo.'
+      - '&f3º Objetivo: &7Colocar &f3.000 &7blocos de qualquer tipo.'
+      - '&f4º Objetivo: &7Colocar &f4.000 &7blocos de qualquer tipo.'
+      - '&f5º Objetivo: &7Colocar &f5.000 &7blocos de qualquer tipo.'
+      - ''
+      - '&eClique para ver mais detalhes.'
