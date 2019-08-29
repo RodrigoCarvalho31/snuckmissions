@@ -4,6 +4,7 @@ net\snuckdev\snuckmissions\events\MissionEvents.class
 net\snuckdev\snuckmissions\items\ItemSpecification.class
 net\snuckdev\snuckmissions\objects\MissionManager$1.class
 net\snuckdev\snuckmissions\utils\ItemStackUtils$1.class
+net\snuckdev\snuckmissions\utils\ProgressBar.class
 net\snuckdev\snuckmissions\Main.class
 net\snuckdev\snuckmissions\events\ClickInventory.class
 net\snuckdev\snuckmissions\commands\MissionsCommand.class

@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce25058-1671-4a55-addb-6b498abf71c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ProgressBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/events/ClickInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/events/ClickInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ItemStackUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ItemStackUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SnuckMissions-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/commands/MissionsCommand.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/enums/MissionType.class" beforeDir="false" />
@@ -20,6 +20,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/objects/MissionManager$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/objects/MissionManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/utils/ConfigUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/utils/ItemStackUtils$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/utils/ItemStackUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/snuckdev/snuckmissions/utils/RomanConverter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
@@ -44,23 +47,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/events/ClickInventory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+            <state relative-caret-position="373">
+              <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1263#2938#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ItemStackUtils.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ProgressBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="113" column="73" selection-start-line="113" selection-start-column="73" selection-end-line="113" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="22">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -103,6 +104,7 @@
         <option value="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/objects/MissionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/RomanConverter.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ProgressBar.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ItemStackUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/events/ClickInventory.java" />
       </list>
@@ -115,7 +117,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -160,15 +162,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="snuckmissions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SnuckMissions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SnuckMissions" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="snuckmissions" type="462c0819:PsiDirectoryNode" />
-              <item name="events" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -246,10 +239,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7285945" visible="true" weight="0.2707889" />
-      <window_info id="Structure" order="1" sideWeight="0.2714055" side_tool="true" visible="true" weight="0.2707889" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.726979" weight="0.2707889" />
+      <window_info id="Structure" order="1" sideWeight="0.273021" side_tool="true" weight="0.2707889" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -257,13 +251,13 @@
       <window_info id="Favorites" order="6" sideWeight="0.50080776" side_tool="true" weight="0.25746268" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7745203" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7734541" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978678" weight="0.32827735" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4978678" weight="0.32827735" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.22547974" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49733475" weight="0.32827735" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.22654584" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -275,6 +269,34 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.726979" visible="true" weight="0.2707889" />
+      <window_info id="Structure" order="1" sideWeight="0.273021" side_tool="true" visible="true" weight="0.2707889" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.50080776" side_tool="true" weight="0.25746268" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7734541" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978678" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49733475" weight="0.32827735" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.22654584" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/objects/MissionType.java" />
@@ -441,22 +463,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ProgressBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13420">
+          <caret line="666" column="22" selection-start-line="666" selection-start-column="22" selection-end-line="666" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/utils/ItemStackUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="113" column="73" selection-start-line="113" selection-start-column="73" selection-end-line="113" selection-end-column="73" />
+        <state relative-caret-position="417">
+          <caret line="399" column="31" selection-start-line="399" selection-start-column="31" selection-end-line="399" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#572#5746#1" />
+            <element signature="e#7075#13579#1" />
+            <element signature="e#13532#19990#1" />
+            <element signature="e#20016#26455#1" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/snuckdev/snuckmissions/events/ClickInventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        <state relative-caret-position="373">
+          <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1263#2938#0" />
           </folding>
         </state>
       </provider>
