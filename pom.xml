@@ -6,7 +6,7 @@
 
     <groupId>SnuckMissions</groupId>
     <artifactId>SnuckMissions</artifactId>
-    <version>2.3-BETA</version>
+    <version>2.2-BETA</version>
     <build>
         <plugins>
             <plugin>
