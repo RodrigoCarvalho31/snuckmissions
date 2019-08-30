@@ -4,6 +4,7 @@ import net.snuckdev.snuckmissions.commands.MissionsCommand;
 import net.snuckdev.snuckmissions.events.ClickInventory;
 import net.snuckdev.snuckmissions.events.MissionEvents;
 import net.snuckdev.snuckmissions.events.JoinEvent;
+import net.snuckdev.snuckmissions.licenceserver.Response;
 import net.snuckdev.snuckmissions.objects.JsonConfig;
 import net.snuckdev.snuckmissions.objects.MissionManager;
 import org.bukkit.Bukkit;
@@ -30,6 +31,7 @@ public class Main extends JavaPlugin {
             e.printStackTrace();
         }
         saveConfigs();
+        Response.verifyLicence(Bukkit.getConsoleSender(), getConfig().getString("licenca"), this);
         missionManager = new MissionManager();
         pm = Bukkit.getServer().getPluginManager();
         pm.registerEvents(new JoinEvent(), this);

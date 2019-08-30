@@ -13,6 +13,7 @@ net\snuckdev\snuckmissions\enums\MissionType.class
 net\snuckdev\snuckmissions\objects\MissionManager.class
 net\snuckdev\snuckmissions\events\JoinEvent.class
 net\snuckdev\snuckmissions\items\SkullBuilder.class
+net\snuckdev\snuckmissions\licenceserver\Response.class
 net\snuckdev\snuckmissions\objects\JsonConfig.class
 net\snuckdev\snuckmissions\utils\RomanConverter.class
 net\snuckdev\snuckmissions\utils\ItemStackUtils.class
