@@ -1,7 +1,5 @@
 package net.snuckdev.snuckmissions.utils;
 
-
-import org.bukkit.ChatColor;
 import net.snuckdev.snuckmissions.Main;
 import net.snuckdev.snuckmissions.enums.MissionType;
 import org.bukkit.Material;

@@ -4,4 +4,4 @@ version: 2.0
 main: net.snuckdev.snuckmissions.Main
 commands:
   missoes:
-    aliases: [missions, conquistas]
+    aliases: [conquistas]

@@ -13,9 +13,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MissionsCommand implements CommandExecutor {
@@ -72,16 +70,43 @@ public class MissionsCommand implements CommandExecutor {
         inv.setItem(placedBlocksPosition, placedBlocksDirt);
         //endregion
 
-        inv.setItem(14, new ItemBuilder(Material.DIAMOND_SWORD).setDisplayName("§aJogadores mortos").setLore(Arrays.asList(
-                "§7Veja aqui o progresso das suas conquistas",
-                "§7de matar jogadores."
-        )).build());
+        //region killedplayers
+        int killedPlayersPosition = Main.plugin.getConfig().getInt("menu-principal.jogadores-mortos.posicao");
+        String killedPlayersMaterial = Main.plugin.getConfig().getString("menu-principal.jogadores-mortos.item");
+        String killedPlayersName = Main.plugin.getConfig().getString("menu-principal.jogadores-mortos.name");
 
-        inv.setItem(16, new ItemBuilder(Material.MONSTER_EGG).setDisplayName("§aMonstros mortos").setLore(Arrays.asList(
-                "§7Veja aqui o progresso das suas conquistas",
-                "§7de matar monstros."
-        )).build());
+        ItemStack killedPlayersSword = new ItemBuilder(Material.valueOf(killedPlayersMaterial))
+                .setDisplayName(killedPlayersName)
+                .build();
 
+        ItemMeta killedPlayersMeta = killedPlayersSword.getItemMeta();
+        List<String> killedPlayersLore = new ArrayList<>();
+        for(String s : Main.plugin.getConfig().getStringList("menu-principal.jogadores-mortos.lore")) {
+            killedPlayersLore.add(s.replace("&", "§"));
+        }
+        killedPlayersMeta.setLore(killedPlayersLore);
+        killedPlayersSword.setItemMeta(killedPlayersMeta);
+        inv.setItem(killedPlayersPosition, killedPlayersSword);
+        //endregion
+
+        //region killedmobs
+        int killedMobsPosition = Main.plugin.getConfig().getInt("menu-principal.monstros-mortos.posicao");
+        String killedMobsMaterial = Main.plugin.getConfig().getString("menu-principal.monstros-mortos.item");
+        String killedMobsName = Main.plugin.getConfig().getString("menu-principal.monstros-mortos.name");
+
+        ItemStack killedMobsEgg = new ItemBuilder(Material.valueOf(killedMobsMaterial))
+                .build();
+
+        ItemMeta killedMobsMeta = killedPlayersSword.getItemMeta();
+        killedMobsMeta.setDisplayName(killedMobsName.replace("&", "§"));
+        List<String> killedMobsLore = new ArrayList<>();
+        for(String s : Main.plugin.getConfig().getStringList("menu-principal.monstros-mortos.lore")) {
+            killedMobsLore.add(s.replace("&", "§"));
+        }
+        killedMobsMeta.setLore(killedMobsLore);
+        killedMobsEgg.setItemMeta(killedMobsMeta);
+        inv.setItem(killedMobsPosition, killedMobsEgg);
+        //endregion
         p.openInventory(inv);
 
         return false;

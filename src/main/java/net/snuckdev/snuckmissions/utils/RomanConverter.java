@@ -1,7 +1,6 @@
 package net.snuckdev.snuckmissions.utils;
 
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class RomanConverter {
     private static int[] bases = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};

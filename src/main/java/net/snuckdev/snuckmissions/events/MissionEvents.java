@@ -19,8 +19,18 @@ public class MissionEvents implements Listener {
     public void on(BlockPlaceEvent e) {
         Player p = e.getPlayer();
         Main.missionManager.addToMission(MissionType.PLACE_BLOCKS, p, 1);
+        try {
+            Main.data.save();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
         if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 1000) {
             Main.data.set(p.getName() + ".placed_blocks_level", 1);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             Main.missionManager.notifyLevelUp(MissionType.PLACE_BLOCKS, p, 1);
             try {
                 Main.data.save();
@@ -30,6 +40,11 @@ public class MissionEvents implements Listener {
         }
         if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 2000) {
             Main.data.set(p.getName() + ".placed_blocks_level", 2);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             Main.missionManager.notifyLevelUp(MissionType.PLACE_BLOCKS, p, 2);
             try {
                 Main.data.save();
@@ -39,6 +54,11 @@ public class MissionEvents implements Listener {
         }
         if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 3000) {
             Main.data.set(p.getName() + ".placed_blocks_level", 3);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             Main.missionManager.notifyLevelUp(MissionType.PLACE_BLOCKS, p, 3);
             try {
                 Main.data.save();
@@ -47,8 +67,13 @@ public class MissionEvents implements Listener {
             }
         }
         if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 4000) {
-            Main.missionManager.notifyLevelUp(MissionType.PLACE_BLOCKS, p, 4);
             Main.data.set(p.getName() + ".placed_blocks_level", 4);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            Main.missionManager.notifyLevelUp(MissionType.PLACE_BLOCKS, p, 4);
             try {
                 Main.data.save();
             } catch (IOException ex) {
@@ -56,8 +81,13 @@ public class MissionEvents implements Listener {
             }
         }
         if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 5000) {
-            Main.missionManager.notifyLevelUp(MissionType.PLACE_BLOCKS, p, 5);
             Main.data.set(p.getName() + ".placed_blocks_level", 5);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            Main.missionManager.notifyLevelUp(MissionType.PLACE_BLOCKS, p, 5);
             try {
                 Main.data.save();
             } catch (IOException ex) {
@@ -70,8 +100,18 @@ public class MissionEvents implements Listener {
     public void on(BlockBreakEvent e) {
         Player p = e.getPlayer();
         Main.missionManager.addToMission(MissionType.BREAK_BLOCKS, p, 1);
+        try {
+            Main.data.save();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
         if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 1000) {
             Main.data.set(p.getName() + ".placed_blocks_level", 1);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 1);
             try {
                 Main.data.save();
@@ -81,6 +121,11 @@ public class MissionEvents implements Listener {
         }
         if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 2000) {
             Main.data.set(p.getName() + ".placed_blocks_level", 2);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 2);
             try {
                 Main.data.save();
@@ -90,6 +135,11 @@ public class MissionEvents implements Listener {
         }
         if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 3000) {
             Main.data.set(p.getName() + ".placed_blocks_level", 3);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 3);
             try {
                 Main.data.save();
@@ -99,6 +149,11 @@ public class MissionEvents implements Listener {
         }
         if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 4000) {
             Main.data.set(p.getName() + ".placed_blocks_level", 4);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 4);
             try {
                 Main.data.save();
@@ -108,6 +163,11 @@ public class MissionEvents implements Listener {
         }
         if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 5000) {
             Main.data.set(p.getName() + ".placed_blocks_level", 5);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 5);
             try {
                 Main.data.save();
@@ -120,96 +180,156 @@ public class MissionEvents implements Listener {
     @EventHandler
     public void on(EntityDeathEvent e) {
         LivingEntity target = e.getEntity();
-        if(target instanceof Player) {
+        if(target instanceof Player && e.getEntity().getKiller() != null) {
             Player p = target.getKiller();
             Main.missionManager.addToMission(MissionType.PLAYER_KILL, p, 1);
-            if(Main.data.get(p.getName() + ".killed_players").getAsInt() == 1000) {
-                Main.data.set(p.getName() + ".killed_players_level", 1);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 1);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 1000) {
+                Main.data.set(p.getName() + ".players_killed_level", 1);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.PLAYER_KILL, p, 1);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".killed_players").getAsInt() == 2000) {
-                Main.data.set(p.getName() + ".killed_players_level", 2);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 2);
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 2000) {
+                Main.data.set(p.getName() + ".players_killed_level", 2);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.PLAYER_KILL, p, 2);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".killed_players").getAsInt() == 3000) {
-                Main.data.set(p.getName() + ".killed_players_level", 3);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 3);
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 3000) {
+                Main.data.set(p.getName() + ".players_killed_level", 3);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.PLAYER_KILL, p, 3);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".killed_players").getAsInt() == 4000) {
-                Main.data.set(p.getName() + ".killed_players_level", 4);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 4);
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 4000) {
+                Main.data.set(p.getName() + ".players_killed_level", 4);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.PLAYER_KILL, p, 4);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".killed_players").getAsInt() == 5000) {
-                Main.data.set(p.getName() + ".killed_players_level", 5);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 5);
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 5000) {
+                Main.data.set(p.getName() + ".players_killed_level", 5);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.PLAYER_KILL, p, 5);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-        } else if(target instanceof Monster) {
+        } else if(target instanceof Monster && e.getEntity().getKiller() != null) {
             Player p = target.getKiller();
             Main.missionManager.addToMission(MissionType.MOB_KILL, p, 1);
-            if(Main.data.get(p.getName() + ".killed_mobs").getAsInt() == 1000) {
-                Main.data.set(p.getName() + ".killed_mobs_level", 1);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 1);
+            try {
+                Main.data.save();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 1000) {
+                Main.data.set(p.getName() + ".mobs_killed_level", 1);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.MOB_KILL, p, 1);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".killed_mobs").getAsInt() == 2000) {
-                Main.data.set(p.getName() + ".killed_mobs_level", 2);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 2);
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 2000) {
+                Main.data.set(p.getName() + ".mobs_killed_level", 2);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.MOB_KILL, p, 2);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".killed_mobs").getAsInt() == 3000) {
-                Main.data.set(p.getName() + ".killed_mobs_level", 3);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 3);
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 3000) {
+                Main.data.set(p.getName() + ".mobs_killed_level", 3);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.MOB_KILL, p, 3);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".killed_mobs").getAsInt() == 4000) {
-                Main.data.set(p.getName() + ".killed_mobs_level", 4);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 4);
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 4000) {
+                Main.data.set(p.getName() + ".mobs_killed_level", 4);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.MOB_KILL, p, 4);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".killed_mobs").getAsInt() == 5000) {
-                Main.data.set(p.getName() + ".killed_mobs_level", 5);
-                Main.missionManager.notifyLevelUp(MissionType.BREAK_BLOCKS, p, 5);
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 5000) {
+                Main.data.set(p.getName() + ".mobs_killed_level", 5);
+                try {
+                    Main.data.save();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                Main.missionManager.notifyLevelUp(MissionType.MOB_KILL, p, 5);
                 try {
                     Main.data.save();
                 } catch (IOException ex) {

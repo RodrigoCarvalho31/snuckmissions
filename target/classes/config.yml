@@ -40,3 +40,29 @@ menu-principal:
       - '&f5º Objetivo: &7Colocar &f5.000 &7blocos de qualquer tipo.'
       - ''
       - '&eClique para ver mais detalhes.'
+
+  jogadores-mortos:
+    name: '&eAssassino de jogadores'
+    posicao: 14
+    item: 'DIAMOND_SWORD'
+    lore:
+      - '&f1º Objetivo: &7Matar &f1.000 &7jogadores.'
+      - '&f2º Objetivo: &7Matar &f2.000 &7jogadores.'
+      - '&f3º Objetivo: &7Matar &f3.000 &7jogadores.'
+      - '&f4º Objetivo: &7Matar &f4.000 &7jogadores.'
+      - '&f5º Objetivo: &7Matar &f5.000 &7jogadores.'
+      - ''
+      - '&eClique para ver mais detalhes.'
+
+  monstros-mortos:
+    name: '&eAssassino de monstros'
+    posicao: 16
+    item: 'MONSTER_EGG'
+    lore:
+      - '&f1º Objetivo: &7Matar &f1.000 &7monstros de qualquer tipo.'
+      - '&f2º Objetivo: &7Matar &f2.000 &7monstros de qualquer tipo.'
+      - '&f3º Objetivo: &7Matar &f3.000 &7monstros de qualquer tipo.'
+      - '&f4º Objetivo: &7Matar &f4.000 &7monstros de qualquer tipo.'
+      - '&f5º Objetivo: &7Matar &f5.000 &7monstros de qualquer tipo.'
+      - ''
+      - '&eClique para ver mais detalhes.'
