@@ -15,6 +15,7 @@ conquista-alcancada: '&a&lYAY! &aVocê alcançou a conquista &b{conquista} &acom
 # -
 
 menu-principal:
+  title: 'Menu de missões'
   blocos-quebrados:
     name: '&eDetonador de blocos'
     posicao: 10
@@ -66,3 +67,37 @@ menu-principal:
       - '&f5º Objetivo: &7Matar &f5.000 &7monstros de qualquer tipo.'
       - ''
       - '&eClique para ver mais detalhes.'
+
+# -
+# Configuração das conquistas - requisitos
+# Recomendo deixar o padrão até eu falar, pois se deixar os valores menores pode dar erro na progressbar.
+# -
+
+requisitos:
+  colocar-blocos:
+    level-1: 1000 # O tanto de jogadores para alcançar a conquista 1
+    level-2: 2000 # O tanto de jogadores para alcançar a conquista 2
+    level-3: 3000 # O tanto de jogadores para alcançar a conquista 3
+    level-4: 4000 # O tanto de jogadores para alcançar a conquista 4
+    level-5: 5000 # O tanto de jogadores para alcançar a conquista 5
+
+  quebrar-blocos:
+    level-1: 1000 # O tanto de jogadores para alcançar a conquista 1
+    level-2: 2000 # O tanto de jogadores para alcançar a conquista 2
+    level-3: 3000 # O tanto de jogadores para alcançar a conquista 3
+    level-4: 4000 # O tanto de jogadores para alcançar a conquista 4
+    level-5: 5000 # O tanto de jogadores para alcançar a conquista 5
+
+  matar-monstros:
+    level-1: 1000 # O tanto de jogadores para alcançar a conquista 1
+    level-2: 2000 # O tanto de jogadores para alcançar a conquista 2
+    level-3: 3000 # O tanto de jogadores para alcançar a conquista 3
+    level-4: 4000 # O tanto de jogadores para alcançar a conquista 4
+    level-5: 5000 # O tanto de jogadores para alcançar a conquista 5
+
+  matar-jogadores:
+    level-1: 1000 # O tanto de jogadores para alcançar a conquista 1
+    level-2: 2000 # O tanto de jogadores para alcançar a conquista 2
+    level-3: 3000 # O tanto de jogadores para alcançar a conquista 3
+    level-4: 4000 # O tanto de jogadores para alcançar a conquista 4
+    level-5: 5000 # O tanto de jogadores para alcançar a conquista 5

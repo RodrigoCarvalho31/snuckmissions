@@ -2,6 +2,7 @@ package net.snuckdev.snuckmissions.events;
 
 import net.snuckdev.snuckmissions.Main;
 import net.snuckdev.snuckmissions.enums.MissionType;
+import net.snuckdev.snuckmissions.utils.ConfigUtils;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
@@ -24,7 +25,7 @@ public class MissionEvents implements Listener {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 1000) {
+        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLACE_BLOCKS, 1)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 1);
             try {
                 Main.data.save();
@@ -38,7 +39,7 @@ public class MissionEvents implements Listener {
                 ex.printStackTrace();
             }
         }
-        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 2000) {
+        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLACE_BLOCKS, 2)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 2);
             try {
                 Main.data.save();
@@ -52,7 +53,7 @@ public class MissionEvents implements Listener {
                 ex.printStackTrace();
             }
         }
-        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 3000) {
+        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLACE_BLOCKS, 3)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 3);
             try {
                 Main.data.save();
@@ -66,7 +67,7 @@ public class MissionEvents implements Listener {
                 ex.printStackTrace();
             }
         }
-        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 4000) {
+        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLACE_BLOCKS, 4)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 4);
             try {
                 Main.data.save();
@@ -80,7 +81,7 @@ public class MissionEvents implements Listener {
                 ex.printStackTrace();
             }
         }
-        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == 5000) {
+        if(Main.data.get(p.getName() + ".placed_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLACE_BLOCKS, 5)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 5);
             try {
                 Main.data.save();
@@ -105,7 +106,7 @@ public class MissionEvents implements Listener {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 1000) {
+        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.BREAK_BLOCKS, 1)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 1);
             try {
                 Main.data.save();
@@ -119,7 +120,7 @@ public class MissionEvents implements Listener {
                 ex.printStackTrace();
             }
         }
-        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 2000) {
+        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.BREAK_BLOCKS, 2)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 2);
             try {
                 Main.data.save();
@@ -133,7 +134,7 @@ public class MissionEvents implements Listener {
                 ex.printStackTrace();
             }
         }
-        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 3000) {
+        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.BREAK_BLOCKS, 3)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 3);
             try {
                 Main.data.save();
@@ -147,7 +148,7 @@ public class MissionEvents implements Listener {
                 ex.printStackTrace();
             }
         }
-        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 4000) {
+        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.BREAK_BLOCKS, 4)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 4);
             try {
                 Main.data.save();
@@ -161,7 +162,7 @@ public class MissionEvents implements Listener {
                 ex.printStackTrace();
             }
         }
-        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == 5000) {
+        if(Main.data.get(p.getName() + ".broken_blocks").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.BREAK_BLOCKS, 5)) {
             Main.data.set(p.getName() + ".placed_blocks_level", 5);
             try {
                 Main.data.save();
@@ -188,7 +189,7 @@ public class MissionEvents implements Listener {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 1000) {
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLAYER_KILL, 1)) {
                 Main.data.set(p.getName() + ".players_killed_level", 1);
                 try {
                     Main.data.save();
@@ -202,7 +203,7 @@ public class MissionEvents implements Listener {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 2000) {
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLAYER_KILL, 2)) {
                 Main.data.set(p.getName() + ".players_killed_level", 2);
                 try {
                     Main.data.save();
@@ -216,7 +217,7 @@ public class MissionEvents implements Listener {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 3000) {
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLAYER_KILL, 3)) {
                 Main.data.set(p.getName() + ".players_killed_level", 3);
                 try {
                     Main.data.save();
@@ -230,7 +231,7 @@ public class MissionEvents implements Listener {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 4000) {
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLAYER_KILL, 4)) {
                 Main.data.set(p.getName() + ".players_killed_level", 4);
                 try {
                     Main.data.save();
@@ -244,7 +245,7 @@ public class MissionEvents implements Listener {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == 5000) {
+            if(Main.data.get(p.getName() + ".players_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.PLAYER_KILL, 5)) {
                 Main.data.set(p.getName() + ".players_killed_level", 5);
                 try {
                     Main.data.save();
@@ -266,7 +267,7 @@ public class MissionEvents implements Listener {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 1000) {
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.MOB_KILL, 1)) {
                 Main.data.set(p.getName() + ".mobs_killed_level", 1);
                 try {
                     Main.data.save();
@@ -280,7 +281,7 @@ public class MissionEvents implements Listener {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 2000) {
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.MOB_KILL, 2)) {
                 Main.data.set(p.getName() + ".mobs_killed_level", 2);
                 try {
                     Main.data.save();
@@ -294,7 +295,7 @@ public class MissionEvents implements Listener {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 3000) {
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.MOB_KILL, 3)) {
                 Main.data.set(p.getName() + ".mobs_killed_level", 3);
                 try {
                     Main.data.save();
@@ -308,7 +309,7 @@ public class MissionEvents implements Listener {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 4000) {
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.MOB_KILL, 4)) {
                 Main.data.set(p.getName() + ".mobs_killed_level", 4);
                 try {
                     Main.data.save();
@@ -322,7 +323,7 @@ public class MissionEvents implements Listener {
                     ex.printStackTrace();
                 }
             }
-            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == 5000) {
+            if(Main.data.get(p.getName() + ".mobs_killed").getAsInt() == ConfigUtils.getLevelRequirement(MissionType.MOB_KILL, 5)) {
                 Main.data.set(p.getName() + ".mobs_killed_level", 5);
                 try {
                     Main.data.save();

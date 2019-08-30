@@ -1,5 +1,6 @@
 package net.snuckdev.snuckmissions.events;
 
+import net.snuckdev.snuckmissions.Main;
 import net.snuckdev.snuckmissions.enums.MissionType;
 import net.snuckdev.snuckmissions.utils.ItemStackUtils;
 import org.bukkit.Bukkit;
@@ -22,7 +23,7 @@ public class ClickInventory implements Listener {
         ItemStack item = e.getCurrentItem();
         String itemName = item.getItemMeta().getDisplayName();
 
-        if (title.equals("Menu de missões")) {
+        if (title.equals(Main.plugin.getConfig().getString("menu-principal.title"))) {
             if (e.getCurrentItem() == null) return;
             if (e.getCurrentItem().getType() == Material.AIR) return;
 
