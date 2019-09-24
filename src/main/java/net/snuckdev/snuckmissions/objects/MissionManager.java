@@ -66,28 +66,7 @@ public class MissionManager {
     }
 
     public boolean hasLevel(MissionType missionType, Player p, int level) {
-        switch (missionType) {
-            case PLACE_BLOCKS: {
-                return Main.data.get(p.getName() + ".placed_blocks_level").getAsInt() >= level;
-            }
-
-            case BREAK_BLOCKS: {
-                return Main.data.get(p.getName() + ".broken_blocks_level").getAsInt() >= level;
-            }
-
-            case PLAYER_KILL: {
-                return Main.data.get(p.getName() + ".players_killed_level").getAsInt() >= level;
-            }
-
-            case MOB_KILL: {
-                return Main.data.get(p.getName() + ".mobs_killed_level").getAsInt() >= level;
-            }
-
-            default: {
-                break;
-            }
-        }
-        return false;
+        return Main.data.get(p.getName() + "." + missionType.getPath()).getAsInt() >= level;
     }
 
     public void notifyLevelUp(MissionType missionType, Player p, int level) {
